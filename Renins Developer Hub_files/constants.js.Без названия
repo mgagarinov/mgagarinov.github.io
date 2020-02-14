@@ -1,0 +1,19 @@
+var constants = constants || (function () {
+
+    var grants = {
+        tier: "Unlimited",
+        subscription_tier: "Bronze",
+        tokenType: "DEFAULT",
+        validity_time: 3600,
+        baseGrants: "refresh_token,client_credentials"
+    }
+
+    var settings = {
+        useLocalizations: false
+    }
+
+    return {
+        grants: grants,
+        settings: settings
+    }
+}());

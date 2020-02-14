@@ -1,0 +1,12 @@
+function ellipsizeText(className)
+{
+    var els = document.getElementsByClassName(className);
+    for(var i = 0; i<els.length; i++) {
+        var el = els[i];
+        var wordArray = el.innerHTML.split(' ');
+        while(el.scrollHeight > el.offsetHeight) {
+            wordArray.pop();
+            el.innerHTML = wordArray.join(' ') + '...';
+        }
+    }
+}

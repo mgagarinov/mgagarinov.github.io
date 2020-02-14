@@ -1,0 +1,16 @@
+$(document).ready(function() {
+
+    Inputmask.extendDefaults({
+        'showMaskOnHover': false
+    });
+
+    $("input[data-mask-name]").each(function(index, value) {
+		utils.charFilterForInputReplaceByEmptyString(value);
+    });
+
+    $("textarea[data-mask-name]").each(function(index, value) {
+		utils.charFilterForInputReplaceByEmptyString(value);
+    });
+
+    //initBackgroundVideo();
+});

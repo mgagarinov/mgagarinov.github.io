@@ -1,0 +1,226 @@
+
+var login = login || {};
+
+
+(function () {
+    var loginbox = login.loginbox || (login.loginbox = {});
+
+    // loginbox.login = function (username, password, url, tenant, returnback, grecaptcha) {
+
+
+    //     jagg.post("/site/blocks/user/authenticate-login/ajax/login.jag", { action: "login", username: username, password: password, tenant: encodeURIComponent(tenant), returnback: encodeURIComponent(returnback), grecaptcha: grecaptcha, withoutCaptcha: false },
+    //         function (result) {
+    //             if (result.error == false) {
+    //                 if (returnback == "true") {
+    //                     window.history.back();
+    //                 }
+    //                 else {
+    //                     window.location.href = requestURL + "site/pages/applications-all.jag";
+    //                 }
+    //             } else {
+    //                 $('#password').val('');
+    //                 jagg.message({ content: i18n.t(result.message), type: "error" });
+    //             }
+    //         }, "json");
+    // };
+
+    loginbox.logout = function () {
+        jagg.post("/site/blocks/user/login/ajax/login.jag", { action: "logout" }, function (result) {
+            if (result.error == false) {
+                window.location.href = requestURL + "?" + urlPrefix;
+            } else {
+                jagg.message({ content: result.message, type: "error" });
+                window.location.reload();
+            }
+        }, "json");
+    };
+
+
+    window.recaptchaCallbackLogin = function () {
+        $("#hiddenRecaptchaLogin").valid();
+    }
+
+    $(document).ready(function () {
+
+
+        var registerEventsForLogin = function () {
+
+
+        }
+
+        // $('#mainLoginForm input').off('keydown');
+        // $('#mainLoginForm input').keydown(function (event) {
+        //     if (event.which == 13) {
+        //         var goto_url = $.cookie("goto_url");
+        //         event.preventDefault();
+        //         login.loginbox.login($("#username").val(), $("#password").val(), goto_url, $("#tenant").val(), $("#returnback").val());
+
+        //     }
+        // });
+
+
+        //     //$('#loginBtn').off('click');
+        //     // $('#loginBtn').click(
+        //     //     function () {
+        //     //         var goto_url = $.cookie("goto_url");
+        //     //         login.loginbox.login($("#username").val(), $("#password").val(), goto_url, $("#tenant").val(), $("#returnback").val());
+        //     //     }
+        //     // );
+        // };
+
+        var showLoginForm = function (event) {
+
+            if ((ssoEnabled && ssoEnabled == 'true') || (oidcEnabled && oidcEnabled == 'true')) {
+                var targetLocation = $(this).attr('href');
+                if (targetLocation == undefined) {
+                    targetLocation = window.location.href;
+                    //targetLocation = currentLocation;
+                }
+                var redirectURL = siteContext + '/site/pages/sso-filter.jag?passiveAuthRequired=false&requestedPage=' + encodeURIComponent(targetLocation);
+                window.location.href = redirectURL;
+                return false;
+            }
+            if (event != undefined) {
+                event.preventDefault();
+            }
+            if (!isSecure) {
+                $('#loginRedirectForm').submit();
+                return;
+            }
+
+
+            if ($(this).attr("href")) {
+                var gotoUrl = siteContext;
+                //when there is a custom URL configured for a tenant in store (i.e https://store.apim.com -> tenant.com)
+                //the store will be on root context. In that cases, the redirection should happen to "/"
+                if (!gotoUrl) {
+                    gotoUrl = "/";
+                }
+                if ($(this).attr("id") == "btn-login") {
+                    $.cookie("goto_url", window.location.href, { path: gotoUrl, secure: true });
+                } else {
+                    $.cookie("goto_url", $(this).attr("href"), { secure: true });
+                }
+            } else {
+                if ($('#tenant').val() && $('#tenant').val() != "null") {
+                    $.cookie("goto_url", siteContext + '?tenant=' + $('#tenant').val(), { secure: true });
+                } else {
+                    $.cookie("goto_url", siteContext, { secure: true });
+                }
+            }
+
+            $('#username').focus();
+
+            registerEventsForLogin();
+
+            var loginUrl = siteContext + '/site/pages/authenticate.jag?tab=login';
+
+            if ($('#tenant').val() && $('#tenant').val() != "null") {
+                loginUrl = siteContext + '/site/pages/login.jag?tenant=' + $('#tenant').val();
+            }
+
+            window.location.href = loginUrl;
+        };
+
+
+
+
+        // login.loginbox.showLoginForm = showLoginForm;
+
+        $("#goBackBtn").click(function () {
+            var loginUrl = $.cookie("goto_url");
+            if ((loginUrl == null || loginUrl == "null" || loginUrl == "")) {
+                loginUrl = siteContext;
+                if ($('#tenant').val() != null && $('#tenant').val() != "null") {
+                    loginUrl = siteContext + '?tenant=' + $('#tenant').val();
+                }
+            }
+            window.location.href = loginUrl;
+        });
+
+        $("#logout-link").click(function () {
+            LogOut();
+        });
+
+        $("#logout-link-small-devices").click(function () {
+            LogOut();
+        });
+
+        function LogOut() {
+            $.cookie('AppId', null);
+
+            if (ssoEnabled == 'true' || oidcEnabled == 'true') {
+                location.href = requestURL + '/site/pages/logout.jag';
+            } else {
+                login.loginbox.logout();
+            }
+        }
+
+        $(".need-login").click(showLoginForm);
+        $('#login-link').click(showLoginForm);
+
+        if (isSecure && showLogin == true) {
+            showLogin = false;
+            showLoginForm();
+        }
+
+        $.validator.addMethod("hidden-recaptcha", function (value, element) {
+            $.validator.messages["hidden-recaptcha"] = $(element).attr(
+                "hidden-recaptcha-message"
+            );
+
+            return grecaptcha.getResponse($(element).attr(
+                "hidden-recaptcha-id"
+            )) != "";
+        });
+
+        $("#sign-in").validate({
+            ignore: ".ignore",
+            errorPlacement: function (error, element) {
+                error.insertAfter(element);
+            },
+            submitHandler: function (form) {
+                var username = $("#username").val().trim();
+                var password = $("#password").val();
+                var tenant = $("#tenant").val();
+                var returnback = $("#returnback").val();
+
+                var grecaptcha = window.grecaptcha && window.grecaptcha.getResponse(0);
+
+
+                jagg.post("/site/blocks/user/authenticate-login/ajax/login.jag", { action: "login", username: username, password: password, tenant: encodeURIComponent(tenant), returnback: encodeURIComponent(returnback), grecaptcha: grecaptcha, withoutCaptcha: false },
+                    function (result) {
+                        if (result.error == false) {
+                            if (returnback == "true") {
+                                window.history.back();
+                            }
+                            else {
+                                window.location.href = requestURL + "site/pages/applications-all.jag";
+                            }
+                        } else {
+                            $('#password').val('');
+                            jagg.message({ content: i18n.t(result.message), type: "error" });
+                            window.grecaptcha.reset();
+                        }
+                    }, "json");
+            }
+        });
+
+
+
+        // function login() {
+        //     var goto_url = $.cookie("goto_url");
+        //     var url_prefix = window.location.origin + siteContext;
+        //     // checking whether the redirection url starts with the hostname
+        //     if (goto_url != null && goto_url.indexOf(url_prefix) != 0) {
+        //         goto_url = siteContext
+        //     }
+
+        //     login.loginbox.login($("#username").val().trim(), $("#password").val(), goto_url, $("#tenant").val(), $("#returnback").val(), grecaptcha.getResponse(0));
+        // }
+
+    });
+
+
+}(login));
+
