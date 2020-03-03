@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://developerhub.Reninsbank.by/developerhub/site/pages/home.jag -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1250, initial-scale=0">
+    <meta name="author" content="">
+    <meta name="description" content="">
+
+    <title>Renins Developer Hub</title>
+    <script src="./Renins Developer Hub_files/cookieconsent.min.js.Без названия" data-cfasync="false"></script>
+    <script>
+        var requestURL = '/developerhub/';
+        var ssoEnabled = 'false';
+        var oidcEnabled = 'false';
+        var tenant = 'null';
+        var urlPrefix = '';
+        var siteContext = '/developerhub';
+    </script>
+    <link rel="stylesheet" type="text/css" href="./Renins Developer Hub_files/cookieconsent.min.css">
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="https://developerhub.Reninsbank.by/developerhub/site/themes/wso2_Renins/images/Renins-favicon.png">
+
+        <link type="text/css" rel="stylesheet" href="./Renins Developer Hub_files/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="./Renins Developer Hub_files/bs3-upgrade.min.css">
+    <link type="text/css" rel="stylesheet" href="./Renins Developer Hub_files/theme-wso2.css">
+    <link type="text/css" rel="stylesheet" href="./Renins Developer Hub_files/font-wso2.min.css">
+    <link type="text/css" rel="stylesheet" href="./Renins Developer Hub_files/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="./Renins Developer Hub_files/bootstrap-select.min.css">
+    <link type="text/css" rel="stylesheet" href="./Renins Developer Hub_files/custom.css">
+    <link type="text/css" rel="stylesheet" href="./Renins Developer Hub_files/pretty-checkbox.css">
+    <script type="text/javascript" src="./Renins Developer Hub_files/jquery-3.4.1.min.js.Без названия"></script><style></style>
+    <script type="text/javascript" src="./Renins Developer Hub_files/i18next-1.5.9.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/jquery-csrf.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/handlebars-v4.0.5.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/constants.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/jagg.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/utils.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/base.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/dropdown.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/promise-when-all.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/input-active-placeholder.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/input-password-eye.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/input-char-filter.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/ellipsize-text.js.Без названия"></script>
+    <script type="text/javascript">jagg.site = {"context" : "/developerhub", "registry" : ""};</script>
+    <script type="text/javascript">jagg.loggedIn = false;</script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/inputmask.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/jquery.inputmask.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/inputmask.binding.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/authenticate-login.js.Без названия"></script>
+
+    <script>
+
+
+
+        function coockieDenyPrevent(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.open(
+                '/developerhub / site / pages / legal - policy - cookies.jag',
+                '_blank' // <- This is what makes it open in a new window.
+            );
+        }
+
+        var siteRoot = 'https://ibapi.Reninsbank.by:9473/developerhub/site/themes/wso2_Renins';
+
+
+        $(document).ready(function () {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "rgb(0, 0, 0, 0.6)"
+                    },
+                    "button": {
+                        "background": "#4a2c78"
+                    }
+                },
+                elements: {
+                    "deny": "<a aria-label='deny cookie message' tabindex='0' class='cc-btn cc-dismiss' onclick='coockieDenyPrevent(event)' href='/developerhub/site/pages/legal-policy-cookies.jag' target='_blank' rel='noopener'>{{link}}</a>",
+                },
+                "theme": "classic",
+                "type": "opt-in",
+                "showLink": false,
+                "content": {
+                    "message": "<p class='header'>Мы используем файлы cookie для улучшения работы портала!</p><p>Оставаясь на сайте, вы соглашаетесь с <a href='https://www.Reninsbank.by/upload/docs/bank/polit-konfend-angl-rus.pdf' target='_blank' rel='noopener'>условиями использования файлов cookie и политикой конфиденциальности</a>.</p><p>Для отключения использования файлов cookie воспользуйтесь соответствующими настройками вашего браузера.</p>",
+                    "allow": "Согласен",
+                    "link": "Как отключить cookie"
+                }
+            });
+        });
+    </script>
+<style type="text/css">.rc-checkbox{white-space:nowrap;cursor:pointer;outline:none;display:inline-block;position:relative;line-height:1;vertical-align:middle}.rc-checkbox-input:focus+.rc-checkbox-inner,.rc-checkbox:hover .rc-checkbox-inner{border-color:#3dbcf6}.rc-checkbox-inner{position:relative;top:0;left:0;display:inline-block;width:14px;height:14px;border-radius:3px;border:1px solid #d9d9d9;background-color:#fff;transition:border-color .3s cubic-bezier(.68,-.55,.27,1.55),background-color .3s cubic-bezier(.68,-.55,.27,1.55)}.rc-checkbox-inner:after{transform:rotate(45deg);position:absolute;left:4px;top:1px;display:table;width:5px;height:8px;border:2px solid #fff;border-top:0;border-left:0;content:" ";animation-timing-function:cubic-bezier(.68,-.55,.27,1.55);animation-duration:.3s;animation-name:amCheckboxOut}.rc-checkbox-input{position:absolute;left:0;z-index:9999;cursor:pointer;opacity:0;top:0;bottom:0;right:0}.rc-checkbox-checked:hover .rc-checkbox-inner{border-color:#3dbcf6}.rc-checkbox-checked .rc-checkbox-inner{border-color:#3dbcf6;background-color:#3dbcf6}.rc-checkbox-checked .rc-checkbox-inner:after{transform:rotate(45deg);position:absolute;left:4px;top:1px;display:table;width:5px;height:8px;border:2px solid #fff;border-top:0;border-left:0;content:" ";animation-timing-function:cubic-bezier(.68,-.55,.27,1.55);animation-duration:.3s;animation-name:amCheckboxOut}.rc-checkbox-disabled.rc-checkbox-checked:hover .rc-checkbox-inner{border-color:#d9d9d9}.rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner{background-color:#f3f3f3;border-color:#d9d9d9}.rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner:after{animation-name:none;border-color:#ccc}.rc-checkbox-disabled:hover .rc-checkbox-inner{border-color:#d9d9d9}.rc-checkbox-disabled .rc-checkbox-inner{border-color:#d9d9d9;background-color:#f3f3f3}.rc-checkbox-disabled .rc-checkbox-inner:after{animation-name:none;border-color:#f3f3f3}.rc-checkbox-disabled .rc-checkbox-inner-input{cursor:default}@keyframes amCheckboxIn{0%{opacity:0;transform-origin:50% 50%;transform:scale(0) rotate(45deg)}to{opacity:1;transform-origin:50% 50%;transform:scale(1) rotate(45deg)}}@keyframes amCheckboxOut{0%{opacity:1}to{opacity:0}}</style><style type="text/css">@font-face{font-family:Roboto,sans-serif}.section.invisible{display:none}.widget-container{background:#fff;position:absolute;display:-ms-flexbox;display:flex;-ms-flex-flow:column nowrap;flex-flow:column nowrap;width:100%;height:100%;visibility:hidden}.widget-container input{outline-width:0}.widget-container *,.widget-container :after,.widget-container :before{box-sizing:border-box;font-family:Roboto,sans-serif;overflow:hidden}.widget-container.normal{width:350px;bottom:33px;height:500px;right:54px;border-radius:10px;box-sizing:border-box;border:1px solid #e8e8e8}.widget-container.docked,.widget-container.normal{position:fixed;overflow:hidden;box-shadow:0 5px 40px rgba(0,0,0,.16)}.widget-container.docked{max-width:350px;bottom:20px;top:0;right:0}.widget-container:not(.visible){animation:widget-hide .5s backwards}.widget-container.visible{animation:widget-show .5s forwards;width:380px;height:621px;z-index:99999}svg{display:block;margin:auto;height:100%}.chat-button{position:fixed;bottom:48px;right:28px;cursor:pointer;width:65px;height:67px;margin:16px;z-index:999;display:block;opacity:1;animation:widget-show-grow .5s backwards}.chat-button.visible{animation:widget-hide-shrink .5s forwards}.send-button{cursor:pointer;height:35px;width:60px;margin-right:20px;background-color:#4a2c78;border-radius:4px;opacity:1}.send-button:hover{opacity:.8}.message-svg path{fill:#4a2c78}.input-container{background-color:#fff;-ms-flex-negative:0;flex-shrink:0;z-index:999;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;border-top:1px solid #ddd;height:70px;overflow:hidden;line-height:48px;position:relative}.input-container .st1{fill:#fff}.input-container:not(.visible){display:none}.input-container.drag-drop-zone{outline:3px dashed grey;outline-offset:-3px}.input-container input.input,.input-container textarea.input{padding-left:60px;font-size:16px;color:#000;resize:none;line-height:normal!important}textarea.input-custom{line-height:normal!important}.input-form{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:70px;position:relative;width:100%}.input{border-style:none;height:48px;font-size:13px;padding:0 10px;font-size:14px;outline-width:0;-ms-flex-positive:1;flex-grow:1}.input:focus:-ms-input-placeholder{color:transparent}.input:focus::placeholder{color:transparent}.input:-ms-input-placeholder{color:#7d7d7d}.input::placeholder{color:#7d7d7d}.status-container{text-align:center;z-index:999;line-height:40px;-ms-flex-negative:0;flex-shrink:0;color:#fff;position:relative;width:100%;height:60px;background:transparent;border-bottom:1px solid #d3d3d3;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.status-container span.closingTitle{color:#303030;font-weight:500;font-size:18px}.minimize-button{position:absolute;width:48px;top:0;right:35px;height:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;cursor:pointer}.minimize-button.close-button{right:0}.minimize-button-bar{height:2px;width:16px;top:50%;position:absolute}.message-list-container{-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:1;flex-shrink:1;padding:20px;overflow-y:auto}.chat-msg-container{display:-ms-flexbox;display:flex;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-ms-flex-pack:start;justify-content:flex-start;margin-bottom:16px;position:relative}.chat-msg-container.visitor{-ms-flex-align:end;align-items:flex-end;width:100%;text-align:left}.chat-msg-container.visitor .agentName{display:none}.chat-msg-container.agent{-ms-flex-align:start;align-items:flex-start}.chat-msg-container.sibling{margin-top:-12px}.chat-msg-container.sibling .avatar{display:none}.chat-msg-wrapper{display:inline-block}.agentName,.chat-msg-wrapper{margin-left:50px;margin-right:50px;max-width:228px;word-wrap:break-word}.agentName{color:#909090;font-family:Roboto;font-size:12px;line-height:20px}.msg-time{position:absolute;line-height:20px;bottom:4px;right:10px;font-size:13px}.chat-media-container,.chat-msg{padding:16px;border-radius:5px;font-size:14px;color:#555;font-weight:300;line-height:20px;position:relative;padding-right:50px}.visitor .chat-media-container,.visitor .chat-msg{opacity:.8;background-color:#081035;background:linear-gradient(90deg,#132577,#0d1c58);color:#fff;font-size:16px;border-bottom-right-radius:0}.agent .chat-media-container,.agent .chat-msg{opacity:.8;background-color:#4a2c78;background:linear-gradient(90deg,#4a2c78,#ff583d);color:#fff;font-size:16px;border-top-left-radius:0}.chat-media-container{border-radius:8px;overflow:hidden;position:relative;color:#fff}.chat-media-container .chat-msg{background:none!important;padding:0}.chat-img{min-width:160px;min-height:120px;background-position:50%;background-size:cover}.avatar-container{display:inline-block;position:absolute;padding-bottom:1px}.visitor .avatar-container{right:0}.avatar{width:32px;height:32px;border-radius:16px;color:#fff;background-position:50%;background-size:cover;background-repeat:no-repeat;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;font-weight:300}.agent .avatar{left:10px;opacity:1;background-color:#ef3125}.agent .avatar,.visitor .avatar{width:40px;height:40px;border-radius:50%}.visitor .avatar{right:10px;opacity:.8;background-color:#081035;background:linear-gradient(232deg,#132577,#0d1c58)}.visitor-avatar{display:block;margin:auto;height:100%}.system-msg-container{text-align:center;margin-bottom:16px}.system-msg{font-size:14px;color:#bfbfbf;line-height:1.5;display:block}.card-container{padding-top:0;position:relative;border-radius:0}.card-container.offline-card{padding:20px}.card-title{text-align:left;color:#303030;font-size:18px;margin-bottom:0}.card-icon{width:32px;height:32px;position:relative;background-color:#fff;border:1px solid #e0e0e0;border-radius:50%;box-shadow:0 2px 4px 0 rgba(0,0,0,.1);margin:-16px auto;z-index:999;display:none}.card-content{color:#555;font-size:14px;border:none;border-radius:0;padding:0}.buttons-container{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap}.buttons-container .button{-ms-flex-positive:1;flex-grow:1}.buttons-container .button:not(:last-child){margin-right:8px}.offline-shrink-enter{opacity:.01;position:relative;top:100px}.offline-shrink-enter.offline-shrink-enter-active{position:relative;top:0;opacity:1;transition:opacity .5s,top .5s;transition-delay:.5s}.offline-shrink-leave{opacity:.5;position:relative;top:0}.offline-shrink-leave.offline-shrink-leave-active{top:-200px;opacity:.01;transition:top .5s,opacity .5s}.offline-grow-enter{opacity:.5;position:relative;top:-200px}.offline-grow-enter.offline-grow-enter-active{position:relative;top:0;opacity:1;transition:opacity .5s,top .5s}.offline-grow-leave{opacity:.5;position:relative;top:0;height:50px}.offline-grow-leave.offline-grow-leave-active{top:-100px;height:0;opacity:.01;transition:top .5s,opacity .5s,height .5s}.offline-form .section{margin-bottom:0}.offline-form .chat-checkbox{margin-top:20px;overflow:auto}.offline-form .chat-checkbox label.agreement-checkbox{overflow:auto;color:#303030;font-size:16px;font-weight:300;line-height:28px}.offline-form .chat-checkbox input.rc-checkbox-input{opacity:0!important;visibility:hidden;overflow:auto}.offline-form .chat-checkbox span.rc-checkbox{overflow:hidden;margin-right:10px}.offline-form .chat-checkbox span.rc-checkbox span.rc-checkbox-inner{overflow:auto;display:block;content:"";text-indent:-9999px;border:1px solid rgba(0,0,0,.2);z-index:1;opacity:1;top:0;left:0;border-radius:4px;width:18px;height:18px}.offline-form .chat-checkbox span.rc-checkbox.rc-checkbox-checked span.rc-checkbox-inner{background-color:transparent}.offline-form .chat-checkbox span.rc-checkbox.rc-checkbox-checked span.rc-checkbox-inner:after{border:2px solid #4a2c78;border-top:0;border-left:0;height:9px;width:6px;top:2px;left:5px}.offline-form .label{display:block;margin-bottom:4px;color:#4a2c78}.offline-form input,.offline-form textarea{height:50px;padding:0 10px;padding-top:24px;padding-left:0}.offline-form input,.offline-form textarea{border:none;border-bottom:1px solid #ddd;outline-width:0;width:100%;font-size:16px;opacity:.8}.offline-form textarea{border-radius:0;padding:0 10px;margin-top:24px;padding-left:0;resize:none;overflow-y:auto;position:relative}.offline-form .button-container{border:none;border-radius:0;overflow:visible;margin-top:40px}.offline-form .button-send{width:143px;height:35px;border:none;overflow:inherit;font-size:14px;font-weight:300;padding:0;background-color:#4a2c78;color:#fff;outline:none}.offline-form .button-send:active,.offline-form .button-send:focus,.offline-form .button-send:hover{outline:none}.offline-form .button-send.button-close-ok{width:98px}.offline-form .button-send.button-close-cancel{background:none;color:#1c75a8;font-size:14px;opacity:.8;cursor:pointer}.offline-form .button-send.button-close-cancel:active,.offline-form .button-send.button-close-cancel:focus,.offline-form .button-send.button-close-cancel:hover{border:none;box-shadow:none;outline:none}.offline-sent .button-resend{width:100%;margin-top:16px;background-color:#4a2c78;color:#fff}.action-button{font-size:14px;padding:8px;border:1px solid #ddd;border-radius:4px;text-align:center;opacity:1}.action-button:hover{opacity:.8;cursor:pointer}@keyframes typing-animation{0%{transform:translateY(0)}28%{transform:translateY(-5px)}44%{transform:translateY(0)}}.typing-indicator-part:first-child{animation-delay:.2s}.typing-indicator-part:nth-child(2){animation-delay:.3s}.typing-indicator-part:nth-child(3){animation-delay:.4s}.typing-indicator-part{display:inline-block;color:#555;animation:typing-animation 1.5s infinite ease-in-out}@keyframes widget-show{0%{visibility:hidden;opacity:0}1%{visibility:visible;opacity:0;transform:translateY(50%)}to{visibility:visible;opacity:1;transform:translateY(0)}}@keyframes widget-hide{0%{transform:translateY(0)}99%{opacity:0;transform:translateY(50%)}to{visibility:hidden;opacity:0}}@keyframes widget-show-grow{0%{visibility:hidden;opacity:0}1%{visibility:visible;opacity:0;transform:scale(.5)}to{visibility:visible;opacity:1;transform:scale(1)}}@keyframes widget-hide-shrink{0%{visibility:visible;opacity:1;transform:scale(1)}99%{visibility:visible;opacity:0;transform:scale(.5)}to{visibility:hidden;opacity:0}}.spinner-container{z-index:1000;position:absolute;width:100%;height:100%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#fff;transition:visibility .5s,opacity .5s;visibility:hidden;opacity:0;top:0;left:0}.spinner-container.visible{visibility:visible;opacity:1}.spinner{width:40px;height:40px;margin:100px auto;background-color:#4a2c78;border-radius:100%;animation:sk-scaleout 1s infinite ease-in-out}@keyframes sk-scaleout{0%{transform:scale(0)}to{transform:scale(1);opacity:0}}.chat-button .st1{fill:#4a2c78}.chat-button .st1{fill:#fff}.chat-button .st2{fill:none}.close-button .st1,.minimize-button .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#4a2c78}.input-wrapper{position:relative}.input-wrapper.textarea .placeholder{top:10px}.input-wrapper input,.input-wrapper textarea{z-index:1;position:relative;background:transparent}.input-wrapper input.input_full:focus~span.placeholder,.input-wrapper input.input_full~span.placeholder,.input-wrapper input:focus~span.placeholder,.input-wrapper textarea.input_full:focus~span.placeholder,.input-wrapper textarea.input_full~span.placeholder,.input-wrapper textarea:focus~span.placeholder{font-size:12px;line-height:20px;top:8px;font-weight:300}.input-wrapper .placeholder{position:absolute;left:0;max-width:95%;padding-left:20px;white-space:nowrap;text-overflow:ellipsis;font-size:18px;font-weight:300;letter-spacing:normal;opacity:.6;line-height:2.2;overflow:hidden;transition:all .15s ease 0s;color:#909090;padding-left:0;top:14px}.input-wrapper.input-wrapper-textarea .placeholder{top:2px}input[type=file].attach-button{background-image:url(/assets/a0e0bbd29030db8cb1bcd7dbff996a58.svg);display:none}.svg-attach-file-wrapper{border:none;background:transparent;cursor:pointer;outline:none;z-index:99999;opacity:1}.svg-attach-file-wrapper:hover{opacity:.8}.attach{position:absolute;left:23px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;z-index:99999999;cursor:pointer}.attach .st1{fill:#1c75a8}.card-container.offline-card.close-success{padding-top:80px}.card-container.offline-card.close-success .cls-1{fill:green;fill-rule:evenodd}.card-container.offline-card.close-success .success-text{font-size:18px;font-weight:400;line-height:28px;color:#303030;margin-top:30px;text-align:center}.button-counter{width:21px;height:21px;border-radius:50%;display:-ms-flexbox;display:flex;background-color:#fff;position:absolute;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;font-weight:700;color:#4a2c78;font-size:12px;left:35px}.button-counter.none{display:none}.input-error{line-height:2;font-size:14px;color:#4a2c78;font-weight:300}</style><style></style></head>
+
+<body class="body__background "><div class="cc-revoke cc-bottom cc-animate cc-color-override--970861718" style="">Cookie Policy</div><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-opt-in cc-theme-classic cc-bottom cc-color-override--970861718 cc-invisible" style="display: none;"><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message"><p class="header">Мы используем файлы cookie для улучшения работы портала!</p><p>Оставаясь на сайте, вы соглашаетесь с <a href="https://www.Reninsbank.by/upload/docs/bank/polit-konfend-angl-rus.pdf" target="_blank" rel="noopener">условиями использования файлов cookie и политикой конфиденциальности</a>.</p><p>Для отключения использования файлов cookie воспользуйтесь соответствующими настройками вашего браузера.</p></span><div class="cc-compliance cc-highlight"><a aria-label="deny cookie message" tabindex="0" class="cc-btn cc-dismiss" onclick="coockieDenyPrevent(event)" href="https://developerhub.Reninsbank.by/developerhub/site/pages/legal-policy-cookies.jag" target="_blank" rel="noopener">Как отключить cookie</a><a aria-label="allow cookies" role="button" tabindex="0" class="btn btn-atom">Согласен</a></div><!--googleon: all--></div>
+
+   
+    
+    <div class="gradient">
+        <canvas id="particles-canvas" width="1920" height="925" style="width: 1920px; height: 925px;"></canvas>
+    </div>
+    
+
+    
+
+	
+
+
+
+
+
+
+<script>
+
+
+	var user = null;
+
+
+	if (user) {
+
+		var profile = 0.0;
+		localStorage.setItem("openApiUser", JSON.stringify(profile));
+
+	}
+	else {
+		localStorage.setItem("openApiUser", false);
+	}
+
+	window.userStatusDefined = true;
+
+	function languageDefinition() {
+
+		var language_active = $.cookie("portal_language");
+
+		var isDefault = false;
+
+		if (language_active !== "en") {
+			isDefault = true;
+			$("#btn-ru").addClass("active");
+
+		}
+		else {
+			$("#btn-en").addClass("active");
+		}
+
+		$(".lang-change").click(function (event) {
+			event.preventDefault();
+
+			$.cookie("portal_language", $(event.currentTarget).attr("data-lang"), { expires: 365, path: '/' });
+			location.reload();
+		});
+
+	}
+
+	document.addEventListener("DOMContentLoaded", languageDefinition);
+
+
+</script>
+<!-- header -->
+<header class="header header-default">
+	<div class="container-fluid">
+		<div class="pull-left float-remove-xs text-center-xs">
+			<a href="https://developerhub.Reninsbank.by/developerhub/site/pages/index.jag" title="Renins Developer Hub">
+				<div class="header-renins">
+					<img src="./Renins Developer Hub_files/logo-renins-developer-hub.svg" alt="null">
+				</div>
+			</a>
+		</div>
+
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Navbar" aria-expanded="false">
+			<div class="menu-button">
+				<img src="./Renins Developer Hub_files/ic-menu.svg">
+			</div>
+		</button>
+
+		<div class="collapse navbar-collapse remove-padding" id="Navbar">
+			<ul class="nav navbar-nav navbar-right text-center-xs small-text">
+
+				<li class="active"><a title="Главная" href="https://mgagarinov.github.io/"><span>Главная</span></a>
+				</li>
+
+				
+
+						<li class=""><a title="API-Каталог" href="https://api.renins.com/devportal/apis"><span>API-Каталог</span></a>
+						</li>
+						<li class=""><a title="Поддержка" href="https://developerhub.Reninsbank.by/developerhub/site/pages/feedback.jag"><span>Поддержка</span></a>
+						</li>
+						<li class=""><a title="Как это работает" href="https://developerhub.Reninsbank.by/developerhub/site/pages/faq.jag"><span>Как это работает</span></a>
+						</li>
+						<li class="user-icon ">
+							<a id="btn-login" class="need-login" href="https://api.renins.com/devportal/">
+								<span>Вход</span>
+							</a>
+
+							
+							<a title="Регистрация" id="register-link1" href="https://api.renins.com/accountrecoveryendpoint/register.do">
+								<span>Регистрация</span>
+							</a>
+							
+						</li>
+						<!-- <li class="language-changing">
+							<a id="btn-ru" class="lang-change" data-lang="default" href="/developerhub/">
+								<span>RU</span>
+							</a>
+							<a id="btn-en" class="lang-change" data-lang="en" href="/developerhub/">
+								<span>EN</span>
+							</a>
+						</li> -->
+						
+					</ul>
+		</div>
+	</div>
+</header>
+
+
+<!-- #page-content-wrapper -->
+<div class="page-content-wrapper page-content-wrapper-bounded">
+    
+<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/YOUR_EMAIL_HERE" method="post">
+  <fieldset id="fs-frm-inputs">
+    <label for="full-name">Full Name</label>
+    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+    <label for="email-address">Email Address</label>
+    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+    <label for="message">Message</label>
+    <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
+    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+  </fieldset>
+  <input type="submit" value="Submit">
+</form><style>/* reset */
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm fieldset,
+#fs-frm optgroup,
+#fs-frm label,
+#fs-frm #card-element:disabled {
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+#fs-frm label,
+#fs-frm legend,
+#fs-frm ::placeholder {
+  font-size: .825em;
+  margin-bottom: .5em;
+  padding-top: .2em;
+  display: flex;
+  align-items: baseline;
+}
+
+/* border, padding, margin, width */
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm #card-element {
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.9);
+  padding: .75em 1em;
+  margin-bottom: 1.5em;
+}
+#fs-frm input:focus,
+#fs-frm select:focus,
+#fs-frm textarea:focus {
+  background-color: white;
+  outline-style: solid;
+  outline-width: thin;
+  outline-color: gray;
+  outline-offset: -1px;
+}
+#fs-frm [type="text"],
+#fs-frm [type="email"] {
+  width: 100%;
+}
+#fs-frm [type="button"],
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+  width: auto;
+  cursor: pointer;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+#fs-frm [type="button"]:focus,
+#fs-frm [type="submit"]:focus,
+#fs-frm [type="reset"]:focus {
+  outline: none;
+}
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+  margin-bottom: 0;
+}
+#fs-frm select {
+  text-transform: none;
+}
+
+#fs-frm [type="checkbox"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+  display: inline-block;
+  width: auto;
+  margin: 0 .5em 0 0 !important;
+}
+
+#fs-frm [type="radio"] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+  appearance: radio;
+}
+
+/* address, locale */
+#fs-frm fieldset.locale input[name="city"],
+#fs-frm fieldset.locale select[name="state"],
+#fs-frm fieldset.locale input[name="postal-code"] {
+  display: inline;
+}
+#fs-frm fieldset.locale input[name="city"] {
+  width: 52%;
+}
+#fs-frm fieldset.locale select[name="state"],
+#fs-frm fieldset.locale input[name="postal-code"] {
+  width: 20%;
+}
+#fs-frm fieldset.locale input[name="city"],
+#fs-frm fieldset.locale select[name="state"] {
+  margin-right: 3%;
+}
+</style>
+</div>
+<!-- /#page-content-wrapper -->
+
+
+    
+
+
+<script type="text/javascript">
+        var isSecure = true;
+        var showLogin = false;
+        var redirectToHTTPS = '';
+
+    </script>
+ 
+
+<div class="modal fade" id="messageModal"></div>
+
+<!-- Login model -->
+<div id="login-data" class="hide">
+
+
+
+</div>
+
+
+
+<div id="codnfirmation-data" style="display:none;">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">x</button>
+        <h3 class="modal-title">Modal header</h3>
+    </div>
+    <div class="modal-body">
+        <p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+        <a href="https://developerhub.Reninsbank.by/developerhub/site/pages/home.jag#" class="btn btn-primary" title="Save">Save changes</a>
+        <a href="https://developerhub.Reninsbank.by/developerhub/site/pages/home.jag#" class="btn btn-other" data-dismiss="modal" title="Close">Close</a>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade hide" id="confirmation-data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fw fw-cancel"></i></span></button>
+                <h3 class="modal-title" id="myModalLabel">Modal title</h3>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+                <a href="https://developerhub.Reninsbank.by/developerhub/site/pages/home.jag#" id="btn-primary" class="btn btn-atom btn-primary">Save changes</a>
+                <a href="https://developerhub.Reninsbank.by/developerhub/site/pages/home.jag#" class="btn btn-other" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+
+
+            <div class="footer-flex">
+
+                <div class="footer-flex-item">
+
+                    <div>
+
+                        <div class="footer__contact">
+                            <p class="remove-margin text-left">Возникли вопросы?<br><a href="https://developerhub.Reninsbank.by/developerhub/site/pages/feedback.jag">Свяжитесь с нами!</a>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <div class="support-phone-block">
+                            <div class="support-phone-block-number"><span class="feedback-phone-mob">000</span></div>
+                            <div class="support-phone-block-desc">МТС, МЕГАФОН, БИЛАЙН)</div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <div class="footer-flex-item footer-flex-item-desctop">
+
+                    <div class="support-phone-block">
+                        <div class="support-phone-block-number"><span class="feedback-phone">8 800 333-8-800</span>
+                        </div>
+                        <div class="support-phone-block-desc">Для международных звонков</div>
+                    </div>
+                    <div class="support-phone-block">
+                        <div class="support-phone-block-number"><span class="feedback-phone">8 800 333-8-800</span>
+                        </div>
+                        <div class="support-phone-block-desc">Техническая поддержка</div>
+                    </div>
+
+
+                </div>
+                <div class="footer-flex-item">
+
+                    <div class="footer__copyright">
+                        <p class="remove-margin">
+                            © <script>document.write(new Date().getFullYear());</script>2020 АО «Ренессанс страхование»<br>Лицензия на осуществление страховой деятельности СИ №1284
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </footer>
+
+        <script type="text/javascript" src="./Renins Developer Hub_files/main.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/bootstrap.min.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/theme-wso2.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/bootstrap-select.min.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/script.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/jquery.validate.min.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/jquery.validate.password.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/Renins.validate.password.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/jquery.cookie.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/jquery.buttonLoader.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/three.min.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/particles.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/widget.js.Без названия"></script>
+    <script type="text/javascript" src="./Renins Developer Hub_files/home.js.Без названия"></script>
+
+
+
+
+
+
+
+
+
+
+<iframe name="ym-native-frame" title="ym-native-frame" frameborder="0" aria-hidden="true" style="opacity: 0 !important; width: 0px !important; height: 0px !important; position: absolute !important; left: 100% !important; bottom: 100% !important; border: 0px !important;" src="./Renins Developer Hub_files/saved_resource.html"></iframe><div id="widget"><div data-reactroot="" class="index"><div class="widget-container normal "><div class="status-container"><div class="minimize-button" style="top: -4px;"><svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 12 12" width="13" height="2"><path class="st1" d="M11,12H1c-0.5,0-1-0.4-1-1v0c0-0.5,0.4-1,1-1h10c0.5,0,1,0.4,1,1v0C12,11.6,11.6,12,11,12z"></path></svg></div><div class="minimize-button close-button"><svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 12 12" width="10" height="9"><path class="st1" d="M7.4,6.1l4.2-4.2c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L5.9,4.6L1.7,0.4C1.3,0,0.7,0,0.3,0.4s-0.4,1,0,1.4l4.2,4.2
+ l-4.2,4.2c-0.4,0.4-0.4,1,0,1.4s1,0.4,1.4,0l4.2-4.2l4.2,4.2c0.4,0.4,1,0.4,1.4,0s0.4-1,0-1.4L7.4,6.1z"></path></svg></div></div><div class="message-list-container"><div><div class="card-container offline-card"><div class="card-icon"><svg class="message-svg" width="16" height="12" viewBox="0 0 16 12"><path d="M14.4 0H1.6C.72 0 .008.675.008 1.5L0 10.5c0 .825.72 1.5 1.6 1.5h12.8c.88 0 1.6-.675 1.6-1.5v-9c0-.825-.72-1.5-1.6-1.5zm0 3L8 6.75 1.6 3V1.5L8 5.25l6.4-3.75V3z" fill="#424242" fill-rule="evenodd"></path></svg></div><div class="card-content "><div class="card-title">Возникли вопросы? Напишите нам прямо сейчас</div><form class="offline-form"><div class="content"><div class="section"><div><div class="input-wrapper"><input class="undefined  input-custom" label="Имя" name="name" value="" maxlength="30" pattern="[A-Za-zА-Яа-яЁё\s\-]+$"><span class="placeholder">Имя</span></div><div class="error"></div></div><div class="input-error"></div></div><div class="section"><div><div class="input-wrapper"><input class="undefined  input-custom" label="E-mail" name="email" pattern="[a-zA-Z0-9-._@]{0,50}" value="" maxlength="50"><span class="placeholder">E-mail</span></div><div class="error"></div></div><div class="input-error"></div></div></div><div class="button-container"><button class="action-button button-send">НАЧАТЬ ЧАТ</button></div></form></div></div></div><!-- react-empty: 53 --></div><div class="spinner-container "><div class="spinner"></div></div><div class="input-container   "><div class="attach"><input type="file" class="attach-button" placeholder="" accept="*"><button class="svg-attach-file-wrapper"><!-- react-text: 60 --> <!-- /react-text --><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 18 23" width="18" height="23"><g><g id="_x34__x5F_3"><g><path class="st1" d="M17.2,8.9c-0.4-0.3-0.9-0.2-1.1,0.2L8.1,19.9c0,0,0,0,0,0c0,0,0,0.1-0.1,0.1c-1.1,1.6-3.4,1.9-4.9,0.8
+ c-1.6-1.1-1.9-3.3-0.8-4.8c0,0,0,0,0,0c0,0,0,0,0,0l9.8-13.3c0.8-1,2.2-1.3,3.3-0.5c1,0.7,1.3,2.2,0.5,3.2c0,0-6.2,8.4-7.1,9.6
+ c0,0,0,0,0,0c0,0.1-0.1,0.1-0.1,0.2c-0.3,0.5-1,0.6-1.5,0.2c-0.5-0.3-0.6-1-0.2-1.5c0,0,0.1-0.1,0.1-0.2l5.2-7
+ c0.3-0.4,0.2-0.9-0.2-1.1c-0.4-0.3-0.9-0.2-1.1,0.2l-5.3,7.1c0,0,0,0.1-0.1,0.1c0,0,0,0,0,0c-0.8,1.2-0.6,2.8,0.6,3.7
+ c1.2,0.9,2.9,0.6,3.8-0.6c0,0,0.1-0.1,0.1-0.1c0,0,0,0,0,0C10.8,15,17.4,6,17.4,6c1.1-1.7,0.7-4.1-1-5.3
+ c-1.8-1.3-4.2-0.9-5.5,0.8c0,0,0,0,0,0L0.9,15c0,0-0.1,0.1-0.1,0.1c0,0,0,0,0,0c-1.5,2.3-1,5.3,1.3,6.9c2.2,1.6,5.3,1.2,7-0.9
+ c0,0,0,0,0,0c0,0,0.2-0.2,0.2-0.2l8-10.9C17.6,9.7,17.6,9.2,17.2,8.9z"></path></g></g></g></svg></button></div><form class="input-form"><textarea class="input" placeholder="Введите сообщение" style="height: 19px;"></textarea><div class="send-button "><svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20" width="21" height="20"><path id="Shape_113_copy" class="st1" d="M19.9,0.7l-7.7,19C12,19.9,11.9,20,11.6,20c-0.3,0-0.4-0.1-0.6-0.3l-2.9-7.3L0.3,8.8
+ C0.1,8.6-0.1,8.4,0.1,8.1c0-0.1,0.1-0.3,0.3-0.3l18.9-7.8c0.3-0.1,0.6,0,0.7,0.3C20,0.5,20,0.6,19.9,0.7z M11.8,18.2L18,2.8l-9,9
+ L11.8,18.2z M8.2,11.1L17.3,2L1.8,8.4L8.2,11.1z"></path></svg></div></form></div></div><div class="chat-button "><span class="button-counter none">0</span><svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 65.2 66.7" width="65" height="66"><path id="Polygon_1_copy_7" class="st1" d="M42.4,7.2c29.7,15.3,30.4,32,2.2,50c-28.2,18-43.1,10.3-44.5-23
+ C-1.4,0.9,12.7-8.1,42.4,7.2z"></path><g><path class="st1" d="M36,34.3H24.2c-0.1,0-0.1,0-0.2,0c-0.6,0-1,0.5-0.9,1.1c0,0,0,0.1,0,0.1c0,0.6,0.5,1.2,1.1,1.2H36v0
+ c0,0,0.1,0,0.1,0c0.6-0.1,1-0.6,0.9-1.3c0-0.1,0-0.2,0-0.3C37,34.6,36.5,34.2,36,34.3z"></path><path class="st1" d="M30.1,17.9c-9.6,0-17.5,6.6-17.5,14.7c0.1,4.7,2.6,9.1,6.7,11.5l-0.1,0.1c-0.7,1-1.6,1.8-2.6,2.5
+ c-0.2,0.2-0.4,0.4-0.5,0.7C16,48.1,16.4,48.8,17,49c1.1,0.3,2.2,0.4,3.3,0.4c2.7,0,5.3-0.8,7.6-2.3c0.7,0.1,1.4,0.1,2.1,0.1v0
+ c9.6,0,17.5-6.6,17.5-14.7C47.5,24.5,39.7,17.9,30.1,17.9z M30.1,44.7c-0.8,0-1.5,0-2.3-0.1c-0.1,0-0.1,0-0.2,0
+ c-0.3,0-0.5,0.1-0.7,0.2c-1.9,1.3-4.2,2.1-6.6,2.1h-0.1c0.3-0.4,0.6-0.7,0.9-1.1c0.3-0.4,0.7-0.9,0.9-1.4c0,0,0,0,0-0.1
+ c0.3-0.6,0.1-1.4-0.5-1.7c-4.1-2.3-6.7-6-6.7-10c0-6.7,6.9-12.3,15.1-12.3c8.2,0,15.1,5.6,15.1,12.3C45.2,38.8,38.3,44.7,30.1,44.7
+ z"></path><path class="st1" d="M36,28.5H24.2c-0.1,0-0.1,0-0.2,0c-0.6,0-1,0.6-1,1.1c0,0.1,0,0.1,0,0.2c0,0.6,0.6,1,1.1,1H36
+ c0.1,0,0.1,0,0.2,0c0.5-0.1,0.9-0.6,0.8-1.1c0-0.1,0-0.1,0-0.2C37,28.9,36.5,28.4,36,28.5z"></path></g><rect x="12.4" y="16" class="st2" width="34.9" height="34.9"></rect></svg></div></div></div><textarea style="min-height: 0px !important; max-height: none !important; height: 0px !important; visibility: hidden !important; overflow: hidden !important; position: absolute !important; z-index: -1000 !important; top: 0px !important; right: 0px !important; letter-spacing: normal; line-height: normal; font-family: Roboto, sans-serif; font-weight: 300; font-size: 16px; font-style: normal; tab-size: 8; text-rendering: auto; text-transform: none; width: auto; text-indent: 0px; padding: 0px 10px 0px 60px; border-width: 0px; box-sizing: border-box;"></textarea></body></html>
